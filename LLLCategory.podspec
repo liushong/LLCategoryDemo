@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name         = "LLLCategory"
-s.version      = "1.0.2"
+s.version      = "1.0.3"
 s.summary      = "All categories of liushong."
 s.description  = <<-DESC
 LLCategory is all categories of liushong.
@@ -10,7 +10,7 @@ s.license      = { :type => 'MIT', :file => 'LICENSE' }
 s.author       = { '' => 'liushong' }
 s.source       = { :git => "https://github.com/liushong/LLCategoryDemo.git", :tag => s.version.to_s }
 s.ios.deployment_target = '8.0'
-s.source_files = "LLLCategory", "LLLCategory/**/*.{h,m}"
+s.source_files = "LLLCategory/**/*"
 #s.frameworks   = "CoreGraphics", "QuartzCore"
 s.requires_arc = true
 end

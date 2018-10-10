@@ -17,15 +17,17 @@
     dispatch_once(&onceToken, ^{
         //交换NSArray中的objectAtIndex方法
         [objc_getClass("__NSArrayI") SystemSelector:@selector(objectAtIndex:) swizzledSelector:@selector(ll_objectAtIndex:) error:nil];
+        [objc_getClass("__NSSingleObjectArrayI") SystemSelector:@selector(objectAtIndex:) swizzledSelector:@selector(ll_objectAtIndex2:) error:nil];
         //交换NSArray中的objectAtIndexedSubscript方法
         [objc_getClass("__NSArrayI") SystemSelector:@selector(objectAtIndexedSubscript:) swizzledSelector:@selector(ll_objectAtIndexedSubscript:) error:nil];
+        [objc_getClass("__NSSingleObjectArrayI") SystemSelector:@selector(objectAtIndexedSubscript:) swizzledSelector:@selector(ll_objectAtIndexedSubscript2:) error:nil];
     });
 }
 - (id)ll_objectAtIndexedSubscript:(NSUInteger)idx{
     if (idx < self.count) {
         return [self ll_objectAtIndexedSubscript:idx];
     }else{
-        NSLog(@" 你的 NSArray数组已经越界了 但是已经帮你处理好了  %ld   %ld", idx, self.count);
+//        NSLog(@" 你的 NSArray数组已经越界了 但是已经帮你处理好了  %ld   %ld", idx, self.count);
         return nil;
     }
 }
@@ -33,8 +35,23 @@
     if (index < self.count) {
         return [self ll_objectAtIndex:index];
     }else{
-        NSLog(@" 你的 NSArray数组已经越界了 但是已经帮你处理好了  %ld   %ld", index, self.count);
-        
+//        NSLog(@" 你的 NSArray数组已经越界了 但是已经帮你处理好了  %ld   %ld", index, self.count);
+        return nil;
+    }
+}
+- (id)ll_objectAtIndexedSubscript2:(NSUInteger)idx{
+    if (idx < self.count) {
+        return [self ll_objectAtIndexedSubscript2:idx];
+    }else{
+        //        NSLog(@" 你的 NSArray数组已经越界了 但是已经帮你处理好了  %ld   %ld", idx, self.count);
+        return nil;
+    }
+}
+- (id)ll_objectAtIndex2:(NSUInteger)index{
+    if (index < self.count) {
+        return [self ll_objectAtIndex2:index];
+    }else{
+        //        NSLog(@" 你的 NSArray数组已经越界了 但是已经帮你处理好了  %ld   %ld", index, self.count);
         return nil;
     }
 }
@@ -48,24 +65,41 @@
     dispatch_once(&onceToken, ^{
         //交换NSMutableArray中的方法
         [objc_getClass("__NSArrayM") SystemSelector:@selector(objectAtIndex:) swizzledSelector:@selector(jz_objectAtIndex:) error:nil];
+        [objc_getClass("__NSSingleObjectArrayM") SystemSelector:@selector(objectAtIndex:) swizzledSelector:@selector(ll_objectAtIndex2:) error:nil];
         //交换NSMutableArray中的方法
         [objc_getClass("__NSArrayM") SystemSelector:@selector(objectAtIndexedSubscript:) swizzledSelector:@selector(jz_objectAtIndexedSubscript:) error:nil];
+        [objc_getClass("__NSSingleObjectArrayM") SystemSelector:@selector(objectAtIndexedSubscript:) swizzledSelector:@selector(jz_objectAtIndexedSubscript2:) error:nil];
     });
 }
 - (id)jz_objectAtIndex:(NSUInteger)index{
     if (index < self.count) {
         return [self jz_objectAtIndex:index];
     }else{
-        NSLog(@" 你的NSMutableArray数组已经越界 帮你处理好了%ld   %ld   %@", index, self.count, [self class]);
+//        NSLog(@" 你的NSMutableArray数组已经越界 帮你处理好了%ld   %ld   %@", index, self.count, [self class]);
         return nil;
     }
 }
 - (id)jz_objectAtIndexedSubscript:(NSUInteger)index{
     if (index < self.count) {
-        
         return [self jz_objectAtIndexedSubscript:index];
     }else{
-        NSLog(@" 你的NSMutableArray数组已经越界 帮你处理好了%ld   %ld   %@", index, self.count, [self class]);
+//        NSLog(@" 你的NSMutableArray数组已经越界 帮你处理好了%ld   %ld   %@", index, self.count, [self class]);
+        return nil;
+    }
+}
+- (id)jz_objectAtIndex2:(NSUInteger)index{
+    if (index < self.count) {
+        return [self jz_objectAtIndex2:index];
+    }else{
+        //        NSLog(@" 你的NSMutableArray数组已经越界 帮你处理好了%ld   %ld   %@", index, self.count, [self class]);
+        return nil;
+    }
+}
+- (id)jz_objectAtIndexedSubscript2:(NSUInteger)index{
+    if (index < self.count) {
+        return [self jz_objectAtIndexedSubscript2:index];
+    }else{
+        //        NSLog(@" 你的NSMutableArray数组已经越界 帮你处理好了%ld   %ld   %@", index, self.count, [self class]);
         return nil;
     }
 }
@@ -85,7 +119,7 @@
     if ([text isKindOfClass:[NSString class]] && text.length) {
         return [self ll_setText:text];
     } else {
-        NSLog(@" 你的 UILabel.text值为空 但是已经帮你处理好了");
+//        NSLog(@" 你的 UILabel.text值为空 但是已经帮你处理好了");
         return [self ll_setText:@" "];
     }
 }
