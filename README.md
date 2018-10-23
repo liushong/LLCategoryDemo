@@ -2,9 +2,9 @@
 <br>
 (好多人用LLCategory命名...)<br>
 <br>
-##### 关键字：类别 数组越界 label文字为空 闪退 字符串下标连接 富文本make<br>
+##### 关键字：类别 数组越界 label文字为空 闪退 字符串下标连接 富文本make label拷贝<br>
 <br>
-#### pod 'LLLCategory', '~> 1.0.3'<br>
+#### pod 'LLLCategory', '~> 1.0.4'<br>
 <br>
 ### //pch<br>
 #### #import "LLCategory.h"<br>
@@ -55,3 +55,11 @@ textView.scrollEnabled = NO;<br>
     NSLog(@"%@",[URL absoluteString]);<br>
     return NO;<br>
 }<br>
+<br>
+<br>
+#### #import "UILabel+LLCopyLabel.h"<br>
+##### //5.label拷贝<br>
+##### //关键代码 <br>
+label.canCope = YES;<br>
+<br>
+<br>
