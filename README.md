@@ -12,17 +12,19 @@
 ### //使用<br>
 <br>
 #### #import "NSObject+LLErrorHandle.h"<br>
-##### //1.数组越界不会崩<br>
+##### 1.数组越界不会崩<br>
 array = @[@1];<br>
 a = array[2];//返回nil<br>
 <br>
-##### //2.label文字为空不会崩<br>
+2.label文字为空不会崩
+====================
 label.text = nil;//.text = " ";<br>
 <br>
 <br>
 <br>
 #### #import "NSString+LLStringConnection.h"<br>
-##### //3.字符串下标连接<br>
+3.字符串下标连接
+---------------
 a = @"str1"[@"_and_"][@"str2"];//str1_and_str2 字符串连接<br>
 b = @""[@1];//"1" NSNumber转NSString<br>
 c = @""[@{@"key":@"value"}];//"{"key":"value"}" NSDictionary转NSString<br>
