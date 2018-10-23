@@ -14,15 +14,12 @@
 + (NSAttributedString *)makeAttributedString:(void(NS_NOESCAPE ^)(LLAttributedStringMaker *make))block;
 @end
 
-NS_ASSUME_NONNULL_BEGIN
 @class LLAttributedStringChain;
 @interface LLAttributedStringMaker : NSObject
 - (LLAttributedStringChain *(^)(NSString *text))text;
 - (NSAttributedString *)install;
 @end
-NS_ASSUME_NONNULL_END
 
-NS_ASSUME_NONNULL_BEGIN
 @interface LLAttributedStringChain : NSObject
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic, strong, readonly) NSMutableArray<NSMutableAttributedString *> *attributedStrings;
@@ -38,4 +35,3 @@ NS_ASSUME_NONNULL_BEGIN
 - (LLAttributedStringChain *(^)(NSString *link))link;
 - (void)buildSubAttributedString;
 @end
-NS_ASSUME_NONNULL_END

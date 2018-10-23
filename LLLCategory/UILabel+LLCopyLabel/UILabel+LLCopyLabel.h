@@ -8,12 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface UILabel (LLCopyLabel)
 
 @property (nonatomic, readwrite) BOOL canCopy;
 
 @end
-
-NS_ASSUME_NONNULL_END
