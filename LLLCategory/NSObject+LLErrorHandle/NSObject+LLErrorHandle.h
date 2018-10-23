@@ -5,7 +5,7 @@
 //  Created by liushong on 2018/10/10.
 //  Copyright © 2018年 JZ. All rights reserved.
 //
-
+NS_ASSUME_NONNULL_BEGIN
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
@@ -35,3 +35,4 @@
  */
 + (BOOL)SystemSelector:(SEL)systemSelector swizzledSelector:(SEL)swizzledSelector error:(NSError *)error;
 @end
+NS_ASSUME_NONNULL_END

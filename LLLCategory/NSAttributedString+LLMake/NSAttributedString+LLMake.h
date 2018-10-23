@@ -6,6 +6,8 @@
 //  Copyright © 2018年 liushong. All rights reserved.
 //
 
+
+NS_ASSUME_NONNULL_BEGIN
 #import <Foundation/Foundation.h>
 #import<UIKit/UIKit.h>
 
@@ -13,6 +15,7 @@
 @interface NSAttributedString (LLMake)
 + (NSAttributedString *)makeAttributedString:(void(NS_NOESCAPE ^)(LLAttributedStringMaker *make))block;
 @end
+NS_ASSUME_NONNULL_END
 
 NS_ASSUME_NONNULL_BEGIN
 @class LLAttributedStringChain;
