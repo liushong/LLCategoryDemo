@@ -4,7 +4,7 @@
 <br>
 ##### 关键字：类别 数组越界 label文字为空 闪退 字符串下标连接 富文本make label拷贝<br>
 <br>
-#### pod 'LLLCategory', '~> 1.0.4'<br>
+#### pod 'LLLCategory', '~> 1.0.5'<br>
 <br>
 ### //pch<br>
 #### #import "LLCategory.h"<br>
