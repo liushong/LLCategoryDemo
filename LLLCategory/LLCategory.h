@@ -13,3 +13,5 @@
 #import "NSObject+LLErrorHandle.h"
 //字符串下标连接
 #import "NSString+LLStringConnection.h"
+//!label拷贝
+#import "UILabel+LLCopyLabel.h"

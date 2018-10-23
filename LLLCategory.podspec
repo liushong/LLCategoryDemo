@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name         = "LLLCategory"
-s.version      = "1.0.3"
+s.version      = "1.0.4"
 s.summary      = "All categories of liushong."
 s.description  = <<-DESC
 LLCategory is all categories of liushong.
